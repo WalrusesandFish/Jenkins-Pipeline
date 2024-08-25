@@ -16,75 +16,62 @@ pipeline{
                 success{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Unit test status email",
-                    body: "Testing Passed! 
-                    Build log attached"
+                    body: "Testing Passed! Build log attached"
                 }
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Unit test status email",
-                    body: "Testing Failed 
-                    Build log attached"
+                    body: "Testing Failed Build log attached"
                 }
             }
         }
         stage("Code Analysis"){
             steps{
-                echo "ntegrate a code analysis tool to analyse the code and ensure
-it meets industry standards. Research and select a tool to analyse your code using
-Jenkins"
+                echo "Integrate a code analysis tool to analyse the code and ensure it meets industry standards. Research and select a tool to analyse your code using Jenkins"
             }
         }
         stage("Security Scan"){
             steps{
-                echo "perform a security scan on the code using a tool to identify
-any vulnerabilities. Research and select a tool to scan your code."
+                echo "perform a security scan on the code using a tool to identify any vulnerabilities. Research and select a tool to scan your code."
             }
             post{
                 success{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Security scan status email",
-                    body: "Security scan Passed!
-                    Build log attached"
+                    body: "Security scan Passed! Build log attached"
                 }
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Security scan status email",
-                    body: "Security scan Failed 
-                    Build log attached"
+                    body: "Security scan Failed Build log attached"
                 }
             }
         }
         stage("Deploy to staging"){
             steps{
-                echo "deploy the application to a staging server (e.g., AWS EC2
-instance)."
+                echo "deploy the application to a staging server (e.g., AWS EC2 instance)."
             }
         }
         stage("Intergration Tests on Staging"){
             steps{
-                echo "run integration tests on the staging
-environment to ensure the application functions as expected in a production-like
-environment."
+                echo "run integration tests on the staging environment to ensure the application functions as expected in a production-like environment."
             }
             post{
                 success{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Intergration test status email",
-                    body: "testing Passed! 
-                    Build log attached"
+                    body: "testing Passed! Build log attached"
                 }
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "intergration test status email",
-                    body: "Testing Failed 
-                    Build log attached"
+                    body: "Testing Failed, Build log attached"
                 }
             }
         }
         stage("Deploy to Production"){
             steps{
-                echo "deploy the application to a production server (e.g.,
-AWS EC2 instance)."
+                echo "deploy the application to a production server (e.g.,AWS EC2 instance)."
             }
         }
     }
