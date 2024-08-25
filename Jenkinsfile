@@ -20,12 +20,14 @@ this stage. "
                 success{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Unit test status email",
-                    body: "Testing Passed! \nBuild log attached"
+                    body: "Testing Passed! 
+                    Build log attached"
                 }
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Unit test status email",
-                    body: "Testing Failed \nBuild log attached"
+                    body: "Testing Failed 
+                    Build log attached"
                 }
             }
         }
@@ -45,12 +47,14 @@ any vulnerabilities. Research and select a tool to scan your code."
                 success{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Security scan status email",
-                    body: "Security scan Passed! \nBuild log attached"
+                    body: "Security scan Passed!
+                    Build log attached"
                 }
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Security scan status email",
-                    body: "Security scan Failed \nBuild log attached"
+                    body: "Security scan Failed 
+                    Build log attached"
                 }
             }
         }
@@ -70,12 +74,14 @@ environment."
                 success{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Intergration test status email",
-                    body: "testing Passed! \nBuild log attached"
+                    body: "testing Passed! 
+                    Build log attached"
                 }
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "intergration test status email",
-                    body: "Testing Failed \nBuild log attached"
+                    body: "Testing Failed 
+                    Build log attached"
                 }
             }
         }
