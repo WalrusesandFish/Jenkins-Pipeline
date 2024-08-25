@@ -4,17 +4,13 @@ pipeline{
     stages{
         stage("Build"){
             steps{
-                echo "Build the code using a build automation tool to compile and package
-your code. You need to specify at least one build automation tool e.g., Maven."
+                echo "Build the code using a build automation tool to compile and package your code. You need to specify at least one build automation tool e.g., Maven."
             }
             
         }
         stage("Unit and Intergration tests"){
             steps{
-                echo "run unit tests to ensure the code functions as
-expected and run integration tests to ensure the different components of the
-application work together as expected. You need to specify test automation tools for
-this stage. "
+                echo "run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected. You need to specify test automation tools for this stage. "
             }
             post{
                 success{
