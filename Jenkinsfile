@@ -21,7 +21,7 @@ pipeline{
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Unit test status email",
-                    body: "Testing Failed Build log attached"
+                    body: "Testing Failed, Build log attached"
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline{
                 failure{
                     mail to: "jaymartiensen@gmail.com",
                     subject: "Security scan status email",
-                    body: "Security scan Failed Build log attached"
+                    body: "Security scan Failed, Build log attached"
                 }
             }
         }
