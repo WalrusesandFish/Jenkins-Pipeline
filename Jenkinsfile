@@ -64,7 +64,7 @@ pipeline {
                              See Logs for more details.""",
                         attachLog: true
                     ) 
-                }  attachLog: true
+                } 
                 }
             }
         }
