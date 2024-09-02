@@ -33,17 +33,15 @@ pipeline {
                 echo "perform a security scan on the code using a tool to identify any vulnerabilities. Research and select a tool to scan your code."
             }
             post {
-                success {
-                    mail to: "jaymartiensen@gmail.com",
-                    subject: "Security scan status email",
-                    body: "Security scan Passed! Build log attached.",
-                    attachLog: true
-                }
-                failure {
-                    mail to: "jaymartiensen@gmail.com",
-                    subject: "Security scan status email",
-                    body: "Security scan Failed, Build log attached.",
-                    attachLog: true
+                always {
+                    emailext(
+                        to: "jaymartiensen@gmail.com",
+                        subject: "Security Scan results ${currentBuild.currentResult}",
+                        body: """The build ${currentBuild.fullDisplayName} has completed.
+                             Status: ${currentBuild.currentResult}
+                             See Logs for more details.""",
+                        attachLog: true
+                    ) 
                 }
             }
         }
@@ -57,17 +55,16 @@ pipeline {
                 echo "run integration tests on the staging environment to ensure the application functions as expected in a production-like environment."
             }
             post {
-                success {
-                    mail to: "jaymartiensen@gmail.com",
-                    subject: "Integration test status email",
-                    body: "Testing Passed! Build log attached.",
-                    attachLog: true
-                }
-                failure {
-                    mail to: "jaymartiensen@gmail.com",
-                    subject: "Integration test status email",
-                    body: "Testing Failed, Build log attached.",
-                    attachLog: true
+                always {
+                    emailext(
+                        to: "jaymartiensen@gmail.com",
+                        subject: " Integration tests results ${currentBuild.currentResult}",
+                        body: """The build ${currentBuild.fullDisplayName} has completed.
+                             Status: ${currentBuild.currentResult}
+                             See Logs for more details.""",
+                        attachLog: true
+                    ) 
+                }  attachLog: true
                 }
             }
         }
