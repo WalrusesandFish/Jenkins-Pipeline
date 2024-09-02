@@ -14,13 +14,11 @@ pipeline{
             }
             post{
                 always{
-                    emailext{
-                    to: "jaymartiensen@gmail.com",
+                    mail to: "jaymartiensen@gmail.com",
                     subject: "Unit and Intergration tests results ${currentBuild.currentResult}",
                     body: "The build ${currentBuild.fullDisplayName} has completed \n Status: ${currentBuild.currentResult}
                     \n See Logs for more details"
                     attachLog: true
-                    } 
                 }
                 
             }
