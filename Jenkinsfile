@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo """run unit tests to ensure the code functions as expected. 
                 run integration tests to ensure the different components of the application work together as expected. 
-                You need to specify test automation tools for this stage."""
+                You need to specify test automation tools for this stage. """
             }
             post {
                 always {
@@ -75,7 +75,7 @@ pipeline {
             }
         stage("Deploy to Production") {
         steps {
-                echo "deploy the application to a production server (e.g.,AWS EC2 instance)."
+                echo "deploy the application to a production server (e.g.,AWS EC2 instance). "
             }
         }
     }
