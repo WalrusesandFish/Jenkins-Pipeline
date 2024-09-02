@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    environment {
+        JAVA_OPTS = '-Dmail.smtp.debug=true'
+    }
     stages {
         stage("Build") {
             steps {
