@@ -14,7 +14,7 @@ pipeline{
             }
             post{
                 always{
-                    emialext{
+                    emailext{
                     to: "jaymartiensen@gmail.com",
                     subject: "Unit and Intergration tests results ${currentBuild.currentResult}",
                     body: "The build ${currentBuild.fullDisplayName} has completed \n Status: ${currentBuild.currentResult}
