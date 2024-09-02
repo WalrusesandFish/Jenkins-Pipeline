@@ -13,16 +13,16 @@ pipeline{
                 echo "run unit tests to ensure the code functions as expected and run integration tests to ensure the different components of the application work together as expected. You need to specify test automation tools for this stage. "
             }
             post{
-                success{
-                    mail to: "jaymartiensen@gmail.com",
-                    subject: "Unit test status email",
-                    body: "Testing Passed! Build log attached."
+                always{
+                    emialext{
+                    to: "jaymartiensen@gmail.com",
+                    subject: "Unit and Intergration tests results ${currentBuild.currentResult}",
+                    body: "The build ${currentBuild.fullDisplayName} has completed \n Status: ${currentBuild.currentResult}
+                    \n See Logs for more details"
+                    attachLog: true
+                    } 
                 }
-                failure{
-                    mail to: "jaymartiensen@gmail.com",
-                    subject: "Unit test status email",
-                    body: "Testing Failed, Build log attached."
-                }
+                
             }
         }
         stage("Code Analysis"){
