@@ -67,11 +67,11 @@ pipeline {
                 } 
                 }
             }
-        }
-        stage("Deploy to Production") {
-            steps {
+    }
+    stage("Deploy to Production") {
+        steps {
                 echo "deploy the application to a production server (e.g.,AWS EC2 instance)."
-            }
         }
     }
 }
+    
